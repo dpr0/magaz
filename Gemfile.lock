@@ -467,7 +467,6 @@ DEPENDENCIES
   spree_gateway (~> 3.9)
   spree_i18n (~> 5.0)
   spring
-  turbolinks
   web-console
   webpacker
 
