@@ -9,6 +9,8 @@ require 'capistrano/rails'
 require 'capistrano/rails/migrations'
 require 'capistrano/rails/assets'
 require 'capistrano/scm/git'
+require 'whenever/capistrano'
+
 install_plugin Capistrano::SCM::Git
 install_plugin Capistrano::Puma
 

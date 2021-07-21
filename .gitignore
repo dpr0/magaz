@@ -32,8 +32,6 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 /config/credentials.yml.enc
-/config/credentials/development.key
-/config/credentials/production.key
 
 /public/packs
 /public/packs-test
@@ -42,11 +40,10 @@
 yarn-debug.log*
 .yarn-integrity
 
-/.idea
-.idea
-.env
+/.idea/
+.idea/
 .DS_Store
 ebash
-ebash1
-ebash2
 dump.rdb
+.idea/modules.xml
+.env

@@ -2,23 +2,22 @@
 
 lock '3.16.0'
 
-host = 'krsz.ru'
-# host = '178.154.206.198'
-server host, port: 2222, roles: %w(app db web), primary: true
+server 'zxn.ru', port: 2222, roles: %w(app db web), primary: true
 
 set :rbenv_ruby,      '3.0.1'
-set :application,     'magaz'
-set :repo_url,        'git@github.com:dpr0/magaz.git'
+set :application,     'zxn'
+set :repo_url,        'git@github.com:dpr0/zxn.git'
 set :deploy_user,     'deploy'
-set :linked_files,    fetch(:linked_files, []).push('config/cable.yml', 'config/database.yml', 'config/secrets.yml', 'config/master.key', 'config/credentials.yml.enc', '.env')
-set :linked_dirs,     fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'tmp/session_store', 'vendor/bundle', 'public/system', 'public/uploads')
+set :linked_files,    fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml', 'config/master.key', 'config/credentials.yml.enc', '.env')
+set :linked_dirs,     fetch(:linked_dirs, []).push('log', 'tmp/users', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'tmp/session_store', 'vendor/bundle', 'public/system', 'public/uploads')
 set :keep_releases,   5
 set :user,            'deploy'
 set :use_sudo,        false
 set :stage,           :production
 set :deploy_to,       "/home/#{fetch(:user)}/#{fetch(:application)}"
-set :ssh_options,     forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub)
-set :ruby_string,     "$HOME/.rbenv/bin/rbenv exec"
+set :whenever_identifier, -> { "#{fetch(:application)}_#{fetch(:stage)}" }
+set :ruby_string,     '$HOME/.rbenv/bin/rbenv exec bundle exec'
+
 set :ssh_options, {
   user: 'deploy',
   keys: '~/.ssh/id_rsa',
@@ -32,7 +31,7 @@ namespace :deploy do
   task :check_revision do
     on roles(:app) do
       unless `git rev-parse HEAD` == `git rev-parse origin/master`
-        puts 'WARNING: HEAD is not the same as origin/main'
+        puts 'WARNING: HEAD is not the same as origin/master'
         puts 'Run `git push` to sync changes.'
         exit
       end
