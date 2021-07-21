@@ -2,11 +2,11 @@
 
 lock '3.16.0'
 
-server 'zxn.ru', port: 2222, roles: %w(app db web), primary: true
+server 'krsz.ru', port: 2222, roles: %w(app db web), primary: true
 
 set :rbenv_ruby,      '3.0.1'
-set :application,     'zxn'
-set :repo_url,        'git@github.com:dpr0/zxn.git'
+set :application,     'magaz'
+set :repo_url,        'git@github.com:dpr0/magaz.git'
 set :deploy_user,     'deploy'
 set :linked_files,    fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml', 'config/master.key', 'config/credentials.yml.enc', '.env')
 set :linked_dirs,     fetch(:linked_dirs, []).push('log', 'tmp/users', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'tmp/session_store', 'vendor/bundle', 'public/system', 'public/uploads')
