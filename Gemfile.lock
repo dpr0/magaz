@@ -87,6 +87,7 @@ GEM
     awesome_nested_set (3.4.0)
       activerecord (>= 4.0.0, < 7.0)
     bcrypt (3.1.16)
+    bcrypt_pbkdf (1.1.0)
     bindex (0.8.1)
     bootsnap (1.7.5)
       msgpack (~> 1.0)
@@ -466,6 +467,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt_pbkdf
   bootsnap
   byebug
   capistrano

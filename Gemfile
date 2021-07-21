@@ -23,6 +23,7 @@ gem 'turbolinks'
 gem 'webpacker'
 
 group :development do
+  gem 'bcrypt_pbkdf'
   gem 'byebug'
   gem 'capistrano',                require: false
   gem 'capistrano3-puma', '4.0.0', require: false
