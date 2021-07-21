@@ -11,15 +11,13 @@ gem 'jbuilder'
 gem 'pg'
 gem 'puma'
 gem 'rails'
-gem 'sassc', github: 'sass/sassc-ruby', branch: 'master'
+# gem 'sassc', github: 'sass/sassc-ruby', branch: 'master'
 gem 'sass-rails'
 gem 'slim-rails'
 gem 'spree', '~> 4.2'
 gem 'spree_auth_devise', '~> 4.3'
 gem 'spree_gateway', '~> 3.9'
 gem 'spree_i18n', '~> 5.0'
-# gem 'sqlite3'
-gem 'turbolinks'
 gem 'webpacker'
 
 group :development do
@@ -37,10 +35,4 @@ group :development do
   gem 'rubocop'
   gem 'spring'
   gem 'web-console'
-end
-
-group :test do
-  gem 'capybara', '>= 3.26'
-  gem 'selenium-webdriver'
-  gem 'webdrivers'
 end
