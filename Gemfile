@@ -15,11 +15,11 @@ gem 'dotenv-rails'
 gem 'puma'
 gem 'whenever'
 
-gem 'spree', '~> 4.2'
-gem 'spree_auth_devise', '~> 4.3'
-gem 'spree_gateway', '~> 3.9'
-gem 'spree_i18n', '~> 5.0'
-gem 'sassc', github: 'sass/sassc-ruby', branch: 'master'
+gem 'spree'
+gem 'spree_auth_devise'
+gem 'spree_gateway'
+gem 'spree_i18n'
+# gem 'sassc', github: 'sass/sassc-ruby', branch: 'master'
 
 group :development do
   gem 'byebug'

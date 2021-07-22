@@ -1,0 +1,53 @@
+- @body_id = 'home'
+.homepage-hero-image.mb-3.position-relative
+  img.lazyload.hero-image.position-absolute alt=("Summer Collection") data-src="#{asset_path('homepage/main_banner.jpg')}" data-srcset="#{image_source_set('homepage/main_banner')}" /
+  .hero-content
+    .homepage-hero-image-text.mb-2.mx-auto.pb-3.pb-md-4
+      | Summer Collection
+    div
+      = link_to 'SHOP NOW', spree.products_path, class: 'btn btn-primary spree-btn px-5'
+.container
+  .row
+    .col-6
+      = link_to spree.nested_taxons_path('men'), class: "homepage-taxon-box mb-3" do
+        img.w-100.lazyload alt="Men" data-src="#{asset_path('homepage/category_banner_upper.jpg')}" data-srcset="#{image_source_set('homepage/category_banner_upper')}" /
+        .homepage-taxon-box-text
+          h3 Men
+      = link_to spree.nested_taxons_path('sportswear'), class: "homepage-taxon-box" do
+        img.w-100.lazyload alt="Sportswear" data-src="#{asset_path('homepage/category_banner_lower.jpg')}" data-srcset="#{image_source_set('homepage/category_banner_lower')}" /
+        .homepage-taxon-box-text aria-label="Sportswear" role="img"
+          h3 Sportswear
+    .col-6.d-flex.flex-column
+      = link_to spree.nested_taxons_path('women'), class: "homepage-taxon-box flex-grow-1" do
+        img.w-100.lazyload alt="Women" data-src="#{asset_path('homepage/big_category_banner.jpg')}" data-srcset="#{image_source_set('homepage/big_category_banner')}" /
+        .homepage-taxon-box-text
+          h3 Women
+.my-3 data-product-carousel="" data-product-carousel-taxon-id="bestsellers"
+.homepage-fashion-trends-box.mb-3
+  .text-center
+    .homepage-fashion-trends-box-summer-text.mb-1 Summer 2021
+    .homepage-fashion-trends-box-fashion-trends-text.mb-2 FASHION TRENDS
+    .homepage-fashion-trends-box-description-text.text-center.mb-3
+      | Want to rock this season’s hottest trend in style? These are the top fashion from Summer 2020 Fashion Weeks that are coming our way this season.
+    = link_to 'READ MORE', spree.nested_taxons_path('trending'), class: 'btn px-5 spree-btn btn-outline-primary'
+.mb-3 data-product-carousel="" data-product-carousel-taxon-id="trending"
+.container
+  .row
+    .col-12.col-lg-6
+      = link_to spree.nested_taxons_path('streetstyle') do
+        .homepage-bottom-box.text-center.mb-3
+          img.w-100.lazyload alt=("NEW COLLECTION") data-src="#{asset_path('homepage/promo_banner_left.jpg')}" data-srcset="#{image_source_set('homepage/promo_banner_left')}" /
+          .homepage-bottom-box-inner aria-label=("New Collection") role="img"
+            .homepage-bottom-box-inner-small-text
+              | New Collection
+            .homepage-bottom-box-inner-big-text
+              | Streetstyle
+    .col-12.col-lg-6
+      = link_to spree.nested_taxons_path('summer-sale') do
+        .homepage-bottom-box.text-center.mb-3
+          img.w-100.lazyload alt=("Summer Sale") data-src="#{asset_path('homepage/promo_banner_right.jpg')}" data-srcset="#{image_source_set('homepage/promo_banner_right')}" /
+          .homepage-bottom-box-inner
+            .homepage-bottom-box-inner-small-text
+              | Summer Sale
+            .homepage-bottom-box-inner-big-text
+              | Up To 60%
